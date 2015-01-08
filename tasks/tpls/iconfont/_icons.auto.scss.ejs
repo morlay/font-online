@@ -1,0 +1,14 @@
+@mixin use-font-<%= fontConfig.fontShortName %>() {
+  font-family:"<%= fontConfig.fontName %>";
+  position: relative;
+  top: 0.075em;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+<% for (var idx = 0; idx < codepoints.length; idx++) { %>
+$<%= fontConfig.fontShortName %>-var-<%= codepoints[idx].name %>: "\<%= codepoints[idx].codepoint %>";<% } %>

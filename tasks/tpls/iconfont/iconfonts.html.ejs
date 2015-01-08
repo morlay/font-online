@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Icon Font</title>
+  <style>
+    body {
+      font-size: 64px;
+    }
+
+    @font-face {
+      font-family:"<%= fontConfig.fontName %>";
+      src:url("../fonts/<%= fontConfig.fontName %>.eot?hash=<%= fontConfig.hash %>");
+      src:url("../fonts/<%= fontConfig.fontName %>.eot?hash=<%= fontConfig.hash %>#iefix") format("embedded-opentype"),
+      url("../fonts/<%= fontConfig.fontName %>.woff?hash=<%= fontConfig.hash %>") format("woff"),
+      url("../fonts/<%= fontConfig.fontName %>.ttf?hash=<%= fontConfig.hash %>") format("truetype");
+    }
+
+    .<%= fontConfig.fontShortName %> {
+      font-family:"<%= fontConfig.fontName %>";
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    <% for (var idx = 0; idx < codepoints.length; idx++) { %>
+    .<%= fontConfig.fontShortName %>--<%= codepoints[idx].name %>:before { content: "\<%= codepoints[idx].codepoint %>";}<% } %>
+
+
+  </style>
+</head>
+<body>
+
+<table>
+  <% for (var idx = 0; idx < codepoints.length; idx++) { %>
+  <tr>
+    <td><i class="<%= fontConfig.fontShortName %> <%= fontConfig.fontShortName %>--<%= codepoints[idx].name %>"></i>
+    </td>
+    <td><%= codepoints[idx].name %></td>
+  </tr>
+  <% } %>
+</table>
+
+
+</body>
+</html>

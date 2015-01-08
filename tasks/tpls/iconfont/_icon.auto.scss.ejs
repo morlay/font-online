@@ -1,0 +1,14 @@
+@font-face {
+  font-family:"<%= fontConfig.fontName %>";
+  src:font-url("<%= fontConfig.fontName %>.eot?hash=<%= fontConfig.hash %>");
+  src:font-url("<%= fontConfig.fontName %>.eot?hash=<%= fontConfig.hash %>#iefix") format("embedded-opentype"),
+      font-url("<%= fontConfig.fontName %>.woff?hash=<%= fontConfig.hash %>") format("woff"),
+      font-url("<%= fontConfig.fontName %>.ttf?hash=<%= fontConfig.hash %>") format("truetype");
+}
+
+.<%= fontConfig.fontShortName %>{
+  @include use-font-<%= fontConfig.fontShortName %>();
+}
+
+<% for (var idx = 0; idx < codepoints.length; idx++) { %>
+.<%= fontConfig.fontShortName %><%= fontConfig.bem?'-':'' %>-<%= codepoints[idx].name %>:before { content: $<%= fontConfig.fontShortName %>-var-<%= codepoints[idx].name %>;}<% } %>

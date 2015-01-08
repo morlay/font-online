@@ -1,0 +1,8 @@
+<% for (var idx = 0; idx < fonts.length; idx++) { %>
+@font-face {
+  font-family:"<%= fonts[idx].fontName %>";
+  src:font-url("<%= fonts[idx].fontName %>.eot");
+  src:font-url("<%= fonts[idx].fontName %>.eot?#iefix") format("embedded-opentype"),
+      font-url("<%= fonts[idx].fontName %>.woff") format("woff"),
+      font-url("<%= fonts[idx].fontName %>.ttf") format("truetype");
+}<% } %>
