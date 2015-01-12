@@ -11,6 +11,7 @@ var rename = require('gulp-rename');
 var md5 = require('MD5');
 var mapStream = require('map-stream');
 var syncProcessor = require('gulp-sync-processor');
+var gulpSvgIgnore  = require('gulp-svg-ignore');
 var taskName = path.basename(__filename, path.extname(__filename));
 
 var defaultConfig = {
@@ -24,7 +25,7 @@ var defaultConfig = {
     "fontName": "iconfont",
     "normalize": true,
     "fixedWidth": true,
-    "fontHeight": 512,
+    "fontHeight": 576,
     "centerHorizontally": true,
     "fontShortName": "icon",
     "bem": true
@@ -43,6 +44,7 @@ module.exports = function () {
     };
 
     return gulp.src(conf.src)
+      .pipe(gulpSvgIgnore(['#gridlines']))
       .pipe(svgicons2svgfont(conf.options))
       .on('codepoints', collectCodePointList(tplData))
       .pipe(getHashOfIconFontSvg(tplData.fontConfig))

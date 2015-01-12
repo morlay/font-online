@@ -1,0 +1,19 @@
+{
+  "name": "font-online",
+  "version": "0.0.0",
+  "homepage": "https://github.com/morlay/font-online",
+  "authors": [
+    "Morlay <morlay@qq.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-icons": "~1.0.1"
+  }
+}

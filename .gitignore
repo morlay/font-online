@@ -1,3 +1,5 @@
+src/iconfonts/
+
 # Linux
 # backup files
 *~
@@ -48,6 +50,7 @@ nbactions.xml
 
 # node
 node_modules/
+bower_components/
 
 # develop files
 dest/

@@ -2,6 +2,7 @@
 
 * Quick icon font maker without other libs dependencies, all in NodeJS.
 * Quick web font generator ( no need use svg font )
+* Base on https://github.com/google/material-design-icons
 
 ### How To
 

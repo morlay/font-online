@@ -14,7 +14,12 @@ gulp.opts = {
 gulp.task('iconfont', require('./tasks/iconfont'));
 gulp.task('webfont', require('./tasks/webfont'));
 
-gulp.task('build', ['iconfont', 'webfont']);
+gulp.task('material-design-icons', require('./tasks/material-design-icons'));
+
+gulp.task('build', ['material-design-icons'], function () {
+  gulp.start(['iconfont', 'webfont'])
+});
+
 gulp.task('dev', function () {
   gulp.setWatcher();
   gulp.start('build');

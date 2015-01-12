@@ -3,13 +3,18 @@
   "version": "0.0.2",
   "description": "",
   "main": "gulpfile.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "bower install"
+  },
   "author": "morlay",
   "license": "WTFPL",
   "devDependencies": {
     "MD5": "^1.2.1",
+    "bower": "^1.3.12",
+    "cheerio": "^0.18.0",
     "gulp": "^3.8.10",
     "gulp-rename": "^1.2.0",
+    "gulp-svg-ignore": "0.0.1",
     "gulp-svg2ttf": "^1.0.0",
     "gulp-svgicons2svgfont": "^1.0.0",
     "gulp-sync-processor": "^0.1.2",
@@ -18,6 +23,7 @@
     "gulp-util": "^3.0.2",
     "lodash": "^2.4.1",
     "map-stream": "0.0.5",
+    "svg-scaler": "^0.1.5",
     "svgicons2svgfont": "^1.0.0",
     "through": "^2.3.6"
   }
